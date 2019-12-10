@@ -3,7 +3,7 @@
 """
 This code is an extension of the line fault code written by @author:amt.
 
-This codes solves for pressure evolution coupled with velocity and State evolution.
+This codes solves for pressure evolution coupled with velocity and State evolution in dimensional form.
 
 The equations of pressure, state and velocity evolution are taken from Segall et al., 2010 JGR. 
 
@@ -191,6 +191,8 @@ def plot_outputs(wsol):
 	# figure 2
 	co_seis_mid = int( (o.Wend - o.Wstart)/2. )       # This is the grid point at the center of asperity
 	plt.plot(wsol.t[::10] , wsol.y[o.Wstart + o.N + co_seis_mid , ::10] )
+	plt.ylabel('Slip rate (m/sec)')
+	plt.xlabel('Time (s)')
 	plt.show()
 
 
